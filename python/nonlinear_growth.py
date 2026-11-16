@@ -1,7 +1,7 @@
 # Direct nonlinear pseudo-spectral run of the four-field Hall system (Lockwood eqs 4.3-4.6) around psi0=cos x.
 # Usage: python3 nonlinear_growth.py k eta h T   (e.g. 0.5 0.05 0.5 70 gives growth 0.1437; 1.2 0.05 0.5 120 decays)
 import numpy as np, sys
-def run(k,eta,h,T,Nx=64,Ny=16,dt=0.01,amp=1e-7,seed=1):
+def run(k,eta,h,T,Nx=64,Ny=32,dt=0.01,amp=1e-7,seed=1):
     Lx,Ly=2*np.pi,2*np.pi/k
     x=np.arange(Nx)*Lx/Nx; y=np.arange(Ny)*Ly/Ny; X,Y=np.meshgrid(x,y,indexing='ij')
     kx=np.fft.fftfreq(Nx,1/Nx)*2*np.pi/Lx; ky=np.fft.rfftfreq(Ny,1/Ny)*2*np.pi/Ly
